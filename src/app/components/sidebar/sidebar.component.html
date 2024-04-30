@@ -1,0 +1,10 @@
+<flowbite-sidebar>
+  <flowbite-sidebar-item-group>
+    <flowbite-sidebar-item
+      *ngFor="let component of menuList"
+      [icon]="component.icon"
+      [link]="component.href"
+      >{{ component.title }}</flowbite-sidebar-item
+    >
+  </flowbite-sidebar-item-group>
+</flowbite-sidebar>
