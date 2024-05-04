@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
+
+import {
+  FactoryHomeComponent,
+} from './screens/factory-home/factory-home.component';
 import { ZeccaHomeComponent } from './screens/zecca-home/zecca-home.component';
-import { FactoryHomeComponent } from './screens/factory-home/factory-home.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +46,13 @@ export const routes: Routes = [
           )
       },
       {
+        path: 'map/:id',
+        loadComponent: () =>
+          import('./screens/zecca-map-detail/zecca-map-detail.component').then(
+            (mod) => mod.ZeccaMapDetailComponent,
+          )
+      },
+      {
         path: 'web-site',
         loadComponent: () =>
           import('./screens/zecca-web-sites/zecca-web-sites.component').then(
@@ -50,10 +60,24 @@ export const routes: Routes = [
           )
       },
       {
+        path: 'web-site/:id',
+        loadComponent: () =>
+          import('./screens/zecca-web-detail/zecca-web-detail.component').then(
+            (mod) => mod.ZeccaWebDetailComponent,
+          )
+      },
+      {
         path: 'report',
         loadComponent: () =>
           import('./screens/zecca-report/zecca-report.component').then(
             (mod) => mod.ZeccaReportComponent,
+          )
+      },
+      {
+        path: 'report/:id',
+        loadComponent: () =>
+          import('./screens/zecca-report-full-detail/zecca-report-full-detail.component').then(
+            (mod) => mod.ZeccaReportFullDetailComponent,
           )
       },
       {
@@ -95,8 +119,29 @@ export const routes: Routes = [
       {
         path: 'create-product',
         loadComponent: () =>
-          import('./screens/factory-create-product/factory-create-product.component').then(
-            (mod) => mod.FactoryCreateProductComponent,
+          import('./screens/factory-create-batch/factory-create-batch.component').then(
+            (mod) => mod.FactoryCreateBatchComponent,
+          )
+      },
+      {
+        path: 'create-store',
+        loadComponent: () =>
+          import('./screens/factory-create-store/factory-create-store.component').then(
+            (mod) => mod.FactoryCreateStoreComponent,
+          )
+      },
+      {
+        path: 'store/:id',
+        loadComponent: () =>
+          import('./screens/factory-detail-store/factory-detail-store.component').then(
+            (mod) => mod.FactoryDetailStoreComponent,
+          )
+      },
+      {
+        path: 'edit-store/:id',
+        loadComponent: () =>
+          import('./screens/factory-edit-store/factory-edit-store.component').then(
+            (mod) => mod.FactoryEditStoreComponent,
           )
       },
       {
@@ -111,6 +156,20 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./screens/factory-profile/factory-profile.component').then(
             (mod) => mod.FactoryProfileComponent,
+          )
+      },
+      {
+        path: 'check-serial',
+        loadComponent: () =>
+          import('./screens/factory-check-serial/factory-check-serial.component').then(
+            (mod) => mod.FactoryCheckSerialComponent,
+          )
+      },
+      {
+        path: 'get-batch',
+        loadComponent: () =>
+          import('./screens/factory-get-batch/factory-get-batch.component').then(
+            (mod) => mod.FactoryGetBatchComponent,
           )
       },
       {
